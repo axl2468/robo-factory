@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Teleport Sound Effect HD _ No Copyright [frr1D9gas4k].wav-0abd3f49aaeb994f5ceddc93d1302da2.sample"
+
+[deps]
+
+source_file="res://Audio/Teleport Sound Effect HD _ No Copyright [frr1D9gas4k].wav"
+dest_files=[ "res://.import/Teleport Sound Effect HD _ No Copyright [frr1D9gas4k].wav-0abd3f49aaeb994f5ceddc93d1302da2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

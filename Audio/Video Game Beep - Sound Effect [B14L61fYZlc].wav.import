@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Video Game Beep - Sound Effect [B14L61fYZlc].wav-a08b037fc1b1b631b22df106b3cf5d2d.sample"
+
+[deps]
+
+source_file="res://Audio/Video Game Beep - Sound Effect [B14L61fYZlc].wav"
+dest_files=[ "res://.import/Video Game Beep - Sound Effect [B14L61fYZlc].wav-a08b037fc1b1b631b22df106b3cf5d2d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

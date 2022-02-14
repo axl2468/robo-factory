@@ -1,0 +1,430 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://themes/health.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/world/HP.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Minecraft.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sprites/Other Menu bg.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/EndScreen.gd" type="Script" id=6]
+[ext_resource path="res://sprites/cooldownbar.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0.537255, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0.4, 1 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0.305882, 1 )
+border_width_left = 3
+border_color = Color( 0, 0, 0.305882, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 8
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.901961, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.847059, 0.933333, 0.0705882, 0 )
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath("EndScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="HUD" type="CanvasLayer"]
+scale = Vector2( 0.7, 0.7 )
+transform = Transform2D( 0.7, 0, 0, 0.7, 0, 0 )
+
+[node name="HealthBar" type="Sprite" parent="."]
+position = Vector2( 64, 16 )
+texture = ExtResource( 2 )
+
+[node name="Health" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="Health"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 125.0
+margin_bottom = 15.0
+theme = ExtResource( 1 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 15.7015
+margin_top = 18.5791
+margin_right = 33.7015
+margin_bottom = 33.5791
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Node2D" parent="."]
+pause_mode = 2
+visible = false
+position = Vector2( 70, 40 )
+z_index = 1
+script = ExtResource( 5 )
+
+[node name="DarkPause" type="Polygon2D" parent="Pause"]
+position = Vector2( -69.7983, -39.7894 )
+scale = Vector2( 14.2794, 1.45404 )
+color = Color( 0, 0, 0, 0.423529 )
+polygon = PoolVector2Array( -0.0471298, -0.463758, 31.903, 0.00817871, 32.0918, 182.176, 6.40869e-05, 182.176 )
+
+[node name="PauseMenu" type="Control" parent="Pause"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -152, 272 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditMenu" type="Sprite" parent="Pause/PauseMenu"]
+position = Vector2( 160, 90 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Main" type="Control" parent="Pause/PauseMenu"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="Pause/PauseMenu/Main"]
+margin_left = 136.035
+margin_top = 72.6603
+margin_right = 184.035
+margin_bottom = 92.6603
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Resume"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Pause/PauseMenu/Main"]
+margin_left = 129.749
+margin_top = 94.6603
+margin_right = 188.749
+margin_bottom = 114.661
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Exit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndScreen" type="Node2D" parent="."]
+pause_mode = 2
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 70, 40 )
+z_index = 1
+script = ExtResource( 6 )
+
+[node name="End" type="Control" parent="EndScreen"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( -152, 272 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreMenu" type="Sprite" parent="EndScreen/End"]
+position = Vector2( 160, 90 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="EndScreen/End"]
+margin_left = 68.3815
+margin_top = 36.3862
+margin_right = 92.3815
+margin_bottom = 51.3862
+custom_fonts/font = SubResource( 1 )
+text = "END"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="EndScreen/End"]
+margin_left = 50.5977
+margin_top = 56.6566
+margin_right = 173.598
+margin_bottom = 71.6566
+custom_fonts/font = SubResource( 1 )
+text = "COINS:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="EndScreen/End"]
+margin_left = 34.8834
+margin_top = 72.3709
+margin_right = 157.884
+margin_bottom = 87.3709
+custom_fonts/font = SubResource( 1 )
+text = "TIME TAKEN:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="EndScreen/End"]
+margin_left = 49.1691
+margin_top = 88.0852
+margin_right = 172.169
+margin_bottom = 103.085
+custom_fonts/font = SubResource( 1 )
+text = "SCORE:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="EndScreen/End"]
+visible = false
+margin_left = 56.312
+margin_top = 105.228
+margin_right = 179.312
+margin_bottom = 120.228
+custom_fonts/font = SubResource( 1 )
+text = "NAME:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="EndScreen/End"]
+margin_left = 137.355
+margin_top = 56.657
+margin_right = 260.355
+margin_bottom = 71.657
+custom_fonts/font = SubResource( 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Control" parent="EndScreen/End"]
+margin_left = -22.8571
+margin_top = -9.99999
+margin_right = 17.1429
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minutes" type="Label" parent="EndScreen/End/Time"]
+margin_left = 160.143
+margin_top = 82.0
+margin_right = 174.143
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "00"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="colon" type="Label" parent="EndScreen/End/Time"]
+margin_left = 174.428
+margin_top = 82.0
+margin_right = 185.428
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = ":"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seconds" type="Label" parent="EndScreen/End/Time"]
+margin_left = 177.643
+margin_top = 82.0
+margin_right = 191.643
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "00"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="EndScreen/End"]
+margin_left = 136.96
+margin_top = 88.085
+margin_right = 259.96
+margin_bottom = 103.085
+custom_fonts/font = SubResource( 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Control" parent="EndScreen/End"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="EndScreen/End/Main"]
+margin_left = 96.2202
+margin_top = 126.769
+margin_right = 144.22
+margin_bottom = 146.769
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Submit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitEnd" type="Button" parent="EndScreen/End/Main"]
+margin_left = 173.363
+margin_top = 126.769
+margin_right = 221.363
+margin_bottom = 146.769
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Exit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submitting" type="Label" parent="EndScreen/End/Main"]
+visible = false
+margin_left = 128.131
+margin_top = 129.556
+margin_right = 251.131
+margin_bottom = 144.556
+custom_fonts/font = SubResource( 1 )
+text = "Submitting..."
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="EndScreen/End"]
+visible = false
+margin_left = 138.571
+margin_top = 106.429
+margin_right = 213.571
+margin_bottom = 116.429
+theme = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="EndScreen"]
+
+[node name="Doot" type="AudioStreamPlayer" parent="EndScreen"]
+
+[node name="DashCD" type="ProgressBar" parent="."]
+margin_left = 419.0
+margin_top = 5.0
+margin_right = 449.0
+margin_bottom = 17.0
+theme = SubResource( 11 )
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DashCooldown" type="Sprite" parent="."]
+position = Vector2( 434.286, 11.4286 )
+texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/showup = SubResource( 10 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Ding" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+
+[connection signal="pressed" from="Pause/PauseMenu/Main/Resume" to="Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/PauseMenu/Main/Exit" to="Pause" method="_on_Exit_pressed"]
+[connection signal="pressed" from="EndScreen/End/Main/Submit" to="EndScreen" method="_on_Submit_pressed"]
+[connection signal="pressed" from="EndScreen/End/Main/ExitEnd" to="EndScreen" method="_on_ExitEnd_pressed"]

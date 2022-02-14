@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-short-laser-gun-shot-1670.wav-4e4ca4ac83d1a44a421c3b12d6ac434f.sample"
+
+[deps]
+
+source_file="res://Audio/mixkit-short-laser-gun-shot-1670.wav"
+dest_files=[ "res://.import/mixkit-short-laser-gun-shot-1670.wav-4e4ca4ac83d1a44a421c3b12d6ac434f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

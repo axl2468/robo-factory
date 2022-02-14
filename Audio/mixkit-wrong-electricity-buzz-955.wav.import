@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-wrong-electricity-buzz-955.wav-bc65780e16497be0d8062ef9abdb8eeb.sample"
+
+[deps]
+
+source_file="res://Audio/mixkit-wrong-electricity-buzz-955.wav"
+dest_files=[ "res://.import/mixkit-wrong-electricity-buzz-955.wav-bc65780e16497be0d8062ef9abdb8eeb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

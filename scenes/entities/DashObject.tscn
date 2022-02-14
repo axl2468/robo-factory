@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/DashEffect.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player/Player_spritesheet.png" type="Texture" id=2]
+
+[node name="Dash" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 6
+vframes = 8
+script = ExtResource( 1 )

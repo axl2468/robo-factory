@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sonic 3 - Spin Dash Sound Effect [nKYaZAyldt4].wav-c689d030b9dda8c0d67541b987f66059.sample"
+
+[deps]
+
+source_file="res://Audio/Sonic 3 - Spin Dash Sound Effect [nKYaZAyldt4].wav"
+dest_files=[ "res://.import/Sonic 3 - Spin Dash Sound Effect [nKYaZAyldt4].wav-c689d030b9dda8c0d67541b987f66059.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

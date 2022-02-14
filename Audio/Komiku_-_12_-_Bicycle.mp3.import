@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Komiku_-_12_-_Bicycle.mp3-a2d292e90b1f0753eec155969510916a.mp3str"
+
+[deps]
+
+source_file="res://Audio/Komiku_-_12_-_Bicycle.mp3"
+dest_files=[ "res://.import/Komiku_-_12_-_Bicycle.mp3-a2d292e90b1f0753eec155969510916a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
