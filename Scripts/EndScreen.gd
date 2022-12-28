@@ -20,7 +20,6 @@ func _startCount(coins, time, score):
 	end_coin = coins
 	end_score = score
 	
-	#time shit
 	end_sec = time % 60
 	end_min = (time - end_sec)/60
 	
